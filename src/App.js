@@ -1,22 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { useSearchParams } from 'react-router-dom';
 
 function App() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const name = searchParams.get("name");
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome {name}...
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Your game is coming soon</p>
       </header>
     </div>
   );
